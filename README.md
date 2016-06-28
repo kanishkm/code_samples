@@ -6,21 +6,10 @@ The game is hosted by a server, that provides the list of available moves for a 
 
 Checkers Lite is the same as American Checkers(also known as English draughts) except there is no promotion to king by moving a piece to the last rank (therefore stalemate is possible). Pieces move along diagonals, when available, jumps must be taken in preference to normal moves; and the board is 8 x 8. Multiple jumps in a single turn are not allowed.
 
-The board output format is ASCII - a dot(.) symbolizes an empty square, X for black, O for white. The initial board layout is 
-
-. X . X . X . X
-X . X . X . X .
-. X . X . X . X
-. . . . . . . .
-. . . . . . . .
-O . O . O . O .
-. O . O . O . O
-O . O . O . O .
-
-The connection between player should be established with a simple IP:port. The players are on the same network with no firewall.
+The board output format is ASCII - a dot(.) symbolizes an empty square, X for black, O for white.
 
 Working notes
-1) The server program binds to ip localhost and port 50000. Clients connect to the same. 
+1) The connection between player should be established with a simple IP:port. The server program binds to ip localhost and port 50000. Clients connect to the same.The players are on the same network with no firewall.
 2) Capturing Moves are given preference to non- capturing moves. If a capturing move is available, the server will only suggest that to the player. If no capturing moves are available, then only will a non- capturing move be suggested by the server.
 3) The current board information is sent to both players after every move, but the available moves information is only sent to the player, whose turn it is. 
 4)The moves are presented as a list, with numbers in front of them. The clients can enter any of the numbers, to make a move.
